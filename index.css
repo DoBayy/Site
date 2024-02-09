@@ -4,6 +4,7 @@ body{
     height:1000px;
     font-family: 'Outfit', sans-serif;
     background-color: #f5f5f5;
+    width: 100%;
   }
   #black{
     z-index: 10000;
@@ -134,13 +135,13 @@ border-color: black;
     left: 50%; /* Position the paragraph horizontally centered */
     transform: translate(-50%, -50%); /* Center the paragraph */
 }
-.wrapper {
+.wrappers {
     display: flex;
     width: 90%;
     justify-content: space-around;
   }
 
-  .card {
+  .cards {
     margin-left: 60px;
     width: 280px;
     height: 360px;
@@ -153,17 +154,17 @@ border-color: black;
     transition: 0.4s ease-out;
     box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
   }
-  .card:hover {
+  .cards:hover {
     transform: translateY(20px);
   }
-  .card:hover:before {
+  .cards:hover:before {
     opacity: 1;
   }
-  .card:hover .info {
+  .cards:hover .info {
     opacity: 1;
     transform: translateY(0px);
   }
-  .card:before {
+  .cards:before {
     content: "";
     position: absolute;
     top: 0;
@@ -177,7 +178,7 @@ border-color: black;
     transition: 0.5s;
     opacity: 0;
   }
-  .card img {
+  .cards img {
     opacity: 0.5;
     width: 100%;
     height: 100%;
@@ -188,7 +189,7 @@ border-color: black;
     left: 0;
     border-radius: 15px;
   }
-  .card .info {
+  .cards .info {
     position: relative;
     z-index: 3;
     color: white;
@@ -196,15 +197,15 @@ border-color: black;
     transform: translateY(30px);
     transition: 0.5s;
   }
-  .card .info h1 {
+  .cards .info h1 {
     margin: 0px;
   }
-  .card .info p {
+  .cards .info p {
     letter-spacing: 1px;
     font-size: 15px;
     margin-top: 8px;
   }
-  .card .info button {
+  .cards .info button {
     padding: 0.6rem;
     outline: none;
     border: none;
@@ -215,7 +216,7 @@ border-color: black;
     cursor: pointer;
     transition: 0.4s ease;
   }
-  .card .info button:hover {
+  .cards .info button:hover {
     background: black;
     color: white;
   }
@@ -252,8 +253,141 @@ border-color: black;
     color: white;
     text-shadow: 2px 2px 2px black;
 }
-#review{
+.head{
+  position: absolute;
+  top: -13%;
+}
+.review {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: absolute;
+  top: 1500px;
+  background: black;
+  background:rgba(0, 0, 0, 0.01)
+    url(bgg.jpg)
+    center / cover no-repeat fixed;
+    background-blend-mode: lighten;
+}
+.wrapper {
+  max-width: 1100px;
+  width: 100%;
   position: relative;
-  top: 1200px;
-  
+}
+.wrapper i {
+  z-index: 2;
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+.wrapper i:active{
+  transform: translateY(-50%) scale(0.85);
+}
+.wrapper i:first-child{
+  left: -22px;
+}
+.wrapper i:last-child{
+  right: -22px;
+}
+.wrapper .carousel{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel.no-transition {
+  scroll-behavior: auto;
+}
+.carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.carousel.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
+.carousel :where(.card, .img) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel .card {
+  scroll-snap-align: start;
+  height: 442px;
+  list-style: none;
+  background: #fff;
+  cursor: pointer;
+  padding-bottom: 15px;
+  flex-direction: column;
+  border-radius: 8px;
+  text-align: center;
+  border: 0.3px solid #000000;
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+  backdrop-filter: blur(15px);
+}
+.carousel .card .img {
+  position: absolute;
+  top: 25px;
+  background: black;
+  height: 148px;
+  width: 148px;
+  border-radius: 50%;
+}
+.card .img img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+}
+.carousel .card h2 {
+  font-weight: bold;
+  font-size: 1.56rem;
+  margin: 30px 0 5px;
+  position: absolute;
+  top: 40%;
+}
+.carousel .card span {
+  color:  white;
+  font-size: 17px;
+  font-weight: 10px;
+  position: absolute;
+  top: 60%;
+}
+@media screen and (max-width: 900px) {
+  .wrapper .carousel {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+}
+@media screen and (max-width: 600px) {
+  .wrapper .carousel {
+    grid-auto-columns: 100%;
+  }
+}
+.card:hover{
+  transform: scale(1.05);
 }
