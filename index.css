@@ -1,3 +1,6 @@
+html{
+  scroll-behavior: smooth;
+}
 body{
     margin:0;
     padding:0;
@@ -24,6 +27,10 @@ body{
     display:inline-block;
     width:100px;
     color:black;
+  }
+  #black ul li a{
+      text-decoration: none; /* Remove underline */
+      color: inherit; /* Use the parent element's color */
   }
 .options{
     font-weight: bold;
@@ -134,6 +141,7 @@ border-color: black;
     top: 1165px; /* Position the paragraph vertically centered */
     left: 50%; /* Position the paragraph horizontally centered */
     transform: translate(-50%, -50%); /* Center the paragraph */
+    padding-top: 100px;
 }
 .wrappers {
     display: flex;
@@ -223,7 +231,7 @@ border-color: black;
 .services{
     position: absolute;
     left: 45%;
-    top: -18%;
+    top: -1%;
     z-index: 1;
     font-weight: bold;
     height: 500px;
@@ -231,7 +239,7 @@ border-color: black;
 .web{
     position: absolute;
     left: 8%;
-    top: 18%;
+    top: 22%;
     z-index: 1;
     font-size: 25px;
     color: white;
@@ -239,7 +247,7 @@ border-color: black;
 }.app{
     position: absolute;
     left: 38%;
-    top: 18%;
+    top: 22%;
     z-index: 1;
     font-size: 25px;
     color: white;
@@ -247,7 +255,7 @@ border-color: black;
 }.mar{
     position: absolute;
     left: 68%;
-    top: 18%;
+    top: 22%;
     z-index: 1;
     font-size: 25px;
     color: white;
@@ -255,9 +263,9 @@ border-color: black;
 }
 .head{
   position: absolute;
-  top: -13%;
+  top: -11%;
 }
-.review {
+#review {
   display: flex;
   width: 100%;
   align-items: center;
@@ -391,3 +399,166 @@ border-color: black;
 .card:hover{
   transform: scale(1.05);
 }
+section {
+  width: 100%; /* Adjusted width to occupy the full viewport */
+  overflow-x: auto; /* Added overflow property for horizontal scrolling */
+  white-space: nowrap; /* Prevents cards from wrapping to the next line */
+}
+
+.flip {
+  display: inline-block; /* Display cards in a row */
+  vertical-align: top; /* Align cards to the top of the container */
+  margin: 10px; /* Added margin for spacing between cards */
+  width: 300px; /* Adjust card width */
+  height: 400px; /* Adjust card height */
+  perspective: 1200px;
+  margin-left: 80px;
+  margin-bottom: 50px;
+}
+
+.flip .cover {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: ease all 0.5s;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.flip .cover:before {
+  content: '';
+  position: absolute;
+  border: 5px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  z-index: 2;
+  transition: ease all 0.5s;
+  transform-style: preserve-3d;
+  transform: translateZ(0px);
+}
+
+.flip .cover:after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 2;
+  transition: ease all 0.5s;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.flip .cover h1 {
+  font-weight: 600;
+  position: absolute;
+  bottom: 55px;
+  left: 50px;
+  color: white;
+  transform-style: preserve-3d;
+  transition: ease all 0.5s;
+  z-index: 3;
+  font-size: 35px;
+  transform: translateZ(0px);
+}
+
+.flip .cover .price {
+  font-weight: 200;
+  position: absolute;
+  top: 55px;
+  right: 50px;
+  color: white;
+  transform-style: preserve-3d;
+  transition: ease all 0.5s;
+  z-index: 4;
+  font-size: 2em;
+  transform: translateZ(0px);
+}
+
+.flip:hover .cover {
+  transform: rotateX(0deg) rotateY(-180deg);
+}
+
+.flip:hover .cover:before {
+  transform: translateZ(30px);
+}
+
+.flip:hover .cover:after {
+  background-color: black;
+}
+
+.flip:hover .cover h1 {
+  transform: translateZ(100px);
+}
+
+.flip:hover .cover .price {
+  transform: translateZ(60px);
+}
+
+.flip:hover .cover a {
+  transform: translateZ(-60px) rotateY(-180deg);
+}
+
+.flip .flip-back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #0b0f08;
+  transform-style: preserve-3d;
+  transition: ease all 0.5s;
+  transform: translateZ(-1px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip .flip-back a {
+  transform-style: preserve-3d;
+  transition: ease transform 0.5s, ease background 0.5s;
+  transform: translateZ(-1px) rotateY(-180deg);
+  background: transparent;
+  border: 1px solid white;
+  font-weight: 200;
+  font-size: 1.3em;
+  color: white;
+  padding: 14px 32px;
+  outline: none;
+  text-decoration: none;
+}
+
+.flip .flip-back a:hover {
+  background-color: white;
+  color: black;
+}
+.rate{
+    width: 40%;
+}
+.row{
+    display: flex;
+}
+.flip .cover.item-a {
+    background-image: url('pri.webp');
+  }
+  
+  .flip .cover.item-b {
+    background-image: url('pri1.webp');
+  }
+  
+  .flip .cover.item-c {
+    background-image: url('pri2.webp');
+  }
+  #pricing{
+    position: absolute;
+    top: 2300px;
+    scroll-behavior: smooth;
+  }
+  .amount{
+    position: absolute;
+    left: 50%;
+    top: -20%;
+  }
