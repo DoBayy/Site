@@ -91,3 +91,24 @@ carousel.addEventListener("scroll", infiniteScroll);
 wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
 wrapper.addEventListener("mouseleave", autoPlay);
 
+window.addEventListener('scroll', function() {
+    var container = document.getElementById('myabout');
+    var scrollPosition = window.scrollY;
+    var startScroll = 2300; // Adjust as needed
+    var endScroll = 3000; // Adjust as needed
+    var startWidth = 30; // Initial width in percentage
+    var endWidth = 99; // Final width in percentage
+
+    // Check if the user has scrolled between startScroll and endScroll pixels
+    if (scrollPosition >= startScroll && scrollPosition <= endScroll) {
+        // Calculate the width based on the scroll position
+        var newWidth = startWidth + ((scrollPosition - startScroll) / ((endScroll - startScroll) / (endWidth - startWidth))) + '%';
+        container.style.width = newWidth;
+    } else if (scrollPosition < startScroll) {
+        // Reset width to startWidth if the user scrolls above startScroll pixels
+        container.style.width = startWidth + '%';
+    } else if (scrollPosition > endScroll) {
+        // Set width to endWidth if the user scrolls beyond endScroll pixels
+        container.style.width = endWidth + '%';
+    }
+});
