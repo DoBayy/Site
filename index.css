@@ -645,15 +645,13 @@ html{
   text-decoration: none; /* Remove underline */
   color: inherit; /* Use the parent element's color */
 }
-@media only screen and (min-width: 2300px) {
-  /* For screens with a maximum width of 600px */
+@media screen and (min-width: 1300px) and (max-width: 1500px) {
+  /* CSS rules to apply for screens with a width between 2300px and 2660px */
   #pricing {
-      top: 2500px;
+      top: 2470px;
       left: 90px;
   }
   .our {
     top:1950px;
-
   }
-  
 }
