@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" 
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>DoBay</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="mobile.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 <body>
     <div id="black">
         <ul>
           <li class="options"><a href="#">HOME</a></li>
           <li class="options"><a href="#services">SERVICE</a></li>
-          <li class="options"><a href="#review">REVIEW</a></li>
+          <li class="options"><a href="#revv_">REVIEW</a></li>
           <li class="options"><a href="#pricing">PRICING</a></li>
           <li class="options"><a href="mailto:contact@saksham.uk">CONTACT</a></li>
           <li class="name"><pre>DoBay</pre></li>
@@ -29,7 +32,7 @@
     <h1 class="punchline">Code Your Dreams,
         Freelance Your Way to Success.</h1>
     <a href="mailto:contact@saksham.uk"><button class="hire">Hire Us</button></a>
-    <a href="#myabout"><button class="know">Know about us</button></a>
+    <a href="#abt_us"><button class="know">Know about us</button></a>
     <div id="services">
         <h2 class="services">Services</h2>
         <h3 class="web">Web Devlopment</h3>
@@ -59,11 +62,11 @@
             </div>
         </div>
     </div>
-    <div id="review">
-        <h2 class="head">Reviews</h2>
+    <div id="review" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
+        <h2 class="head" id="revv_">Reviews</h2>
         <div class="wrapper">
           <i id="left" class="fa-solid fa-angle-left"></i>
-          <ul class="carousel">
+          <ul class="carousel" >
             <li class="card">
               <div class="img"><img src="re1.webp" alt="img" draggable="false"></div>
               <h2>Kushagra Bindal</h2>
@@ -76,12 +79,12 @@
             </li>
             <li class="card">
               <div class="img"><img src="re4.webp" alt="img" draggable="false"></div>
-              <h2>Prapti Srivastava</h2>
+              <h2>Aanchal Singhania</h2>
               <span>"I couldn't be happier with the website DoBay created for my business. They took the time to understand my goals and delivered a visually stunning site that attracts customers and drives results."</span>
             </li>
             <li class="card">
               <div class="img"><img src="ree4.webp" alt="img" draggable="false"></div>
-              <h2>Sukanya Tripathi</h2>
+              <h2>Samaira Jain</h2>
               <span>"Dobay.in's team provides exceptional service, with Saksham standing out for his contributions. Transparent communication, outstanding results. Highly recommended."</span>
             </li>
             <li class="card">
@@ -101,12 +104,12 @@
             </li>
             <li class="card">
               <div class="img"><img src="re8.webp" alt="img" draggable="false"></div>
-              <h2>Ishaan Magardhe</h2>
+              <h2>Ishan Magardhe</h2>
               <span>"Choosing DoBay for my web development project was the best decision I made. Their team's creativity and technical proficiency resulted in a website that perfectly aligns with my brand's identity."</span>
             </li>
             <li class="card">
               <div class="img"><img src="re9.webp" alt="img" draggable="false"></div>
-              <h2>Yashvi Singh Rana</h2>
+              <h2>Divya Goel</h2>
               <span>"Dobay.in delivered exceptional marketing results! Their strategies were spot on and their team, especially Harshit, went above and beyond. Truly impressed with their expertise and dedication. Highly recommended!"</span>
             </li>
             <li class="card">
@@ -118,14 +121,15 @@
           <i id="right" class="fa-solid fa-angle-right"></i>
         </div>
       </div>
-      <div id="pricing">
+      <div id="pricing" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
         <h2 class="amount">Pricing</h2>
+        <p id="price__"></p>
         <div class="row">
           <div class="rate">
-            <div class="flip">
-              <div class="cover item-a">
+            <div class="flip" id="flip-a">
+              <div class="cover item-a" id="cover-a">
                 <h1>Web<br>Devlopment</h1>
-                <span class="price">$79</span>
+                <span class="price"> ₹10K</span>
                 <div class="flip-back">
                   <a href="mailto:contact@saksham.uk">Hire Now!</a>
                 </div>
@@ -133,10 +137,10 @@
             </div>
           </div>
           <div class="rate">
-            <div class="flip">
-              <div class="cover item-b">
+            <div class="flip" id="flip-b">
+              <div class="cover item-b" id="cover-b">
                 <h1>App<br>Devlopment</h1>
-                <span class="price">$35</span>
+                <span class="price">₹15K</span>
                 <div class="flip-back">
                   <a href="mailto:contact@saksham.uk">Hire Now!</a>
                 </div>
@@ -144,10 +148,10 @@
             </div>
           </div>
           <div class="rate">
-            <div class="flip">
-              <div class="cover item-c">
+            <div class="flip" id="flip-c">
+              <div class="cover item-c" id="cover-c">
                 <h1>Marketing</h1>
-                <span class="price">$155</span>
+                <span class="price">₹10K</span>
                 <div class="flip-back">
                   <a href="mailto:contact@saksham.uk">Hire now!</a>
                 </div>
@@ -157,13 +161,14 @@
         </div>
       </div>
       <h2 class="our" id="our">About Our Team</h2>
-      <div class="about" id="myabout">
+      <div class="about" id="myabout" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
         <!-- Your content here -->
         <p>
             Welcome to DoBay!
 
             At DoBay, we are more than just a freelancing venture; we are a team of passionate individuals dedicated to bringing your digital dreams to life. With expertise in web development, app development, and marketing, we pride ourselves on delivering exceptional solutions tailored to your needs.
         </p>
+        <p id="abt_us"></p>
         <p>
             <b>Meet the Team:</b><br><br>
 
@@ -178,24 +183,28 @@
             <b>Harshit Rana - The Marketing Maven</b><br>
             Harshit is our marketing maestro, orchestrating strategies that elevate your brand and drive results. With a finger on the pulse of digital marketing trends, he crafts tailored campaigns that resonate with your target audience. From social media engagement to SEO optimization, Harshit ensures that your brand reaches new heights of success.
         </p>
-          <p>
-              <b>Prerak - The genius Backend Dev</b><br>
-              Prerak, a backend developer par excellence, combines innovation, precision, and collaborative prowess to deliver exceptional solutions. With a commitment to excellence and a thirst for knowledge, Prerak elevates every project he touches, exceeding expectations with his expertise and dedication.
-          </p>
         <p>
+            <b>Prerak - The genius Backend Dev</b>
+            Prerak, a backend developer par excellence, combines innovation, precision, and collaborative prowess to deliver exceptional solutions. With a commitment to excellence and a thirst for knowledge, Prerak elevates every project he touches, exceeding expectations with his expertise and dedication.
+        </p>
+        <p id="last">
             Together, we form the backbone of DoBay, united by our passion for excellence and commitment to exceeding your expectations. Whether you're a startup looking to make your mark or an established business seeking to innovate, we're here to guide you every step of the way.
 
             Join us on this digital journey, and let's create something extraordinary together.
+        </p>
     </div>
     <footer>
       <div class="socm">
           <h2 class="foot">Follow DoBay on it's socials.</h2>
           <a href="https://www.instagram.com/dobay.in?igsh=MXY1MnVvdXN0OHU1Zw=="><i class="fa-brands fa-instagram fa-2x"></i></a>
           <a href="https://x.com/DoBay_in?t=CxKIeVSQakDGKpwxW5a9gA&s=08"><i class="fa-brands fa-twitter fa-2x"></i>
-          <i class="fa-brands fa-facebook fa-2x"></i>
-          <i class="fa-solid fa-envelope fa-2x"></i>
+          <i class="fa-brands fa-linkedin fa-2x"></i>
+          <a href="mailto:contact@saksham.uk"><i class="fa-solid fa-envelope fa-2x"></i></a>
       </div>
   </footer>
 </body>
 <script src="script.js"></script>
+<script>
+  AOS.init();
+</script>
 </html>

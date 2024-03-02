@@ -46,7 +46,7 @@
         top: -11px;
         font-weight: bolder;
         font-size: 23px;
-    }
+        }
     #black.scrolled {
         background-color: black; /* Change the background color on scroll */
     }
@@ -286,7 +286,7 @@
       top: 1450px;
       background: black;
       background:rgba(0, 0, 0, 0.01)
-        url(bgg.jpg)
+        url(berlin.jpeg)
         center / cover no-repeat fixed;
         background-blend-mode: lighten;
     }
@@ -315,10 +315,10 @@
       transform: translateY(-50%) scale(0.85);
     }
     .wrapper i:first-child{
-      left: -22px;
+      left: 10px;
     }
     .wrapper i:last-child{
-      right: -22px;
+      right: 10px;
     }
     .wrapper .carousel{
       display: grid;
@@ -326,10 +326,11 @@
       grid-auto-columns: calc((100% / 3) - 12px);
       overflow-x: auto;
       scroll-snap-type: x mandatory;
-      gap: 16px;
+      gap: 50px;
       border-radius: 8px;
       scroll-behavior: smooth;
       scrollbar-width: none;
+      margin-left:40px;
     }
     .carousel::-webkit-scrollbar {
       display: none;
@@ -352,7 +353,7 @@
     }
     .carousel .card {
       scroll-snap-align: start;
-      height: 442px;
+      height: 425px;
       list-style: none;
       background: #fff;
       cursor: pointer;
@@ -417,18 +418,26 @@
     }
     
     .flip {
-      display: inline-block; /* Display cards in a row */
+      display: flex;
+      flex-direction: column;
       vertical-align: top; /* Align cards to the top of the container */
       margin: 10px; /* Added margin for spacing between cards */
-      width: 300px; /* Adjust card width */
-      height: 400px; /* Adjust card height */
+      width: 225px; /* Adjust card width */
+      height: 275px; /* Adjust card height */
       perspective: 1200px;
-      margin-left: 80px;
+      margin-left: 5px;
       margin-bottom: 50px;
+      position:absolute;
+    }
+    .row{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     
     .flip .cover {
       position: relative;
+      left: -20px;
       height: 100%;
       width: 100%;
       transform-style: preserve-3d;
@@ -436,6 +445,31 @@
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
+    }
+    #cover-a{
+      position: relative;
+      top: 0px;
+    }
+    #cover-b{
+      position: relative;
+      top: 10px;
+    }
+    #cover-c{
+      position: relative;
+      top: 20px;
+    }
+    #flip-a{
+      position: relative;
+      top: 0px;
+    }
+    #flip-b{
+      position: relative;
+      top: 10px;
+      
+    }
+    #flip-c{
+      position: relative;
+      top: 20px;
     }
     
     .flip .cover:before {
@@ -474,7 +508,7 @@
       transform-style: preserve-3d;
       transition: ease all 1s;
       z-index: 3;
-      font-size: 35px;
+      font-size: 15px;
       transform: translateZ(0px);
     }
     
@@ -564,20 +598,20 @@
         background-image: url('pic/price3.webp');
       }
       #pricing{
-        position: absolute;
-        top: 2300px;
+        position: relative;
+        top: 2200px;
         scroll-behavior: smooth;
       }
       .amount{
         position: absolute;
-        left: 50%;
-        top: -20%;
+        left: 175px;
+        top: -80px;
       }
       .about {
-        width: 30%; /* Set initial width */
+        width: 100%; /* Set initial width */
         margin: 0 auto; /* Center horizontally */
         border: 1px solid black; /* Just for visualization */
-        height: 700px; /* Just for generating scroll */
+        height: 1100px; /* Just for generating scroll */
         background-color: black;
         color: white;
         display: flex;
@@ -585,18 +619,20 @@
         justify-content: center;
         align-items: center;
         position: relative;
-        top: 4000px;
+        top: 2300px;
+        opacity: 1;
+        transform: opacity 0.5s ease;
       }
       .about p {
         margin-left: 30px; /* Add margin to the paragraphs */
         margin-right: 30px;
-        margin-top: 10px;
+        margin-top:0px;
         margin-bottom: 10px;
       }
       .our{
         position: relative;
-        left: 43%;
-        top: 1900px;
+        left: 30%;
+        top: 2250px;
         width: 500px;
       }
     html{
@@ -608,19 +644,20 @@
       background-color: #ffffff;
       padding: 0;
       margin: 0;
-      height: 65px;
+      height: 240px;
       position: relative;
-      top: 1920px;
+      top: 2275px;
     }
     .fa-brands{
       position: relative;
-      top: -34px;
-      margin-left: 55px;
+      top: -40px;
+      margin-left: 20px;
       position: relative;
-      left: 60%;
+      left: 55%;
       transition: 0.3s ease;
     }
     .fa-envelope{
+      display: block;
       position: relative;
       top: -34px;
       margin-left: 55px;
@@ -646,11 +683,12 @@
       border-color: white;
     }
     .foot{
-      width: 40%;
+      width: 35%;
       position: relative;
       color: black;
-      top: 15px;
+      top: 20px;
       left: 5%;
+      font-size: 22px;
     }
     .socm a{
       text-decoration: none; /* Remove underline */

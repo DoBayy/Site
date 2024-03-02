@@ -78,9 +78,10 @@ const infiniteScroll = () => {
 }
 
 const autoPlay = () => {
-    if(window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
+    if(isAutoPlay){
     // Autoplay the carousel after every 2500 ms
     timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2500);
+    }
 }
 autoPlay();
 
@@ -92,12 +93,17 @@ wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
 wrapper.addEventListener("mouseleave", autoPlay);
 
 window.addEventListener('scroll', function() {
+    // Check window width
+    if (window.innerWidth < 1000) {
+        return; // Exit the function if window width is less than 1000px
+    }
+
     var container = document.getElementById('myabout');
     var scrollPosition = window.scrollY;
     var startScroll = 2300; // Adjust as needed
-    var endScroll = 3000; // Adjust as needed
+    var endScroll = 2850; // Adjust as needed
     var startWidth = 30; // Initial width in percentage
-    var endWidth = 99; // Final width in percentage
+    var endWidth = 99.9; // Final width in percentage
 
     // Check if the user has scrolled between startScroll and endScroll pixels
     if (scrollPosition >= startScroll && scrollPosition <= endScroll) {
@@ -112,3 +118,4 @@ window.addEventListener('scroll', function() {
         container.style.width = endWidth + '%';
     }
 });
+

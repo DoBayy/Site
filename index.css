@@ -37,7 +37,11 @@ body{
     position: relative;
     left: 60%;
     font-size: 15px;
+    transition: transform 0.2s ease;
 }
+.options:hover{
+  transform: scale(1.1);
+} 
 .name{
     position: absolute;
     left:100px;
@@ -563,7 +567,7 @@ section {
     top: -20%;
   }
   .about {
-    width: 30%; /* Set initial width */
+    width: 0%; /* Set initial width */
     margin: 0 auto; /* Center horizontally */
     border: 1px solid black; /* Just for visualization */
     height: 700px; /* Just for generating scroll */
@@ -617,7 +621,7 @@ html{
   left: 60%;
   transition: 0.3s ease;
 }
-.fa-facebook:hover{
+.fa-linkedin:hover{
   color: #000080;
   scale: 1.2;
 }
@@ -645,3 +649,16 @@ html{
   text-decoration: none; /* Remove underline */
   color: inherit; /* Use the parent element's color */
 }
+@media only screen and (min-width: 1400px) {
+  /* For screens with a maximum width of 600px */
+  #pricing {
+      top: 2500px;
+      left: 90px;
+  }
+  .our {
+    top:1950px;
+
+  }
+
+}
+
